@@ -1,1 +1,69 @@
-/* CSS declarations go here */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+*, input {
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+aside {
+	position: relative;
+	width: 300px;
+	height: 100%;
+	background: linear-gradient(to bottom, rgba(0,151,167,1) 0%,rgba(0,96,100,1) 100%);;
+	color: white;
+	float: left;
+	text-align: center;
+	padding: 30px;
+}
+aside .sidebar-info {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+aside h1 {
+	font-size: 3em;
+}
+aside img {
+	max-width: 100%;
+}
+
+div.content {
+	width: calc(100% - 300px);
+	min-height: 100%;
+	overflow: auto;
+}
+
+nav {
+	background: #004D40;
+	color: white;
+}
+nav ul {
+	list-style: none;
+	overflow: hidden;
+	padding-left: 30px;
+}
+nav ul li {
+	float: left;
+	padding: 20px;
+	margin: 0 10px;
+	font-size: 1.3em;
+	cursor: pointer;
+	text-decoration: none;
+}
+nav ul li:hover {
+	text-decoration: underline;
+}
+nav h1 {
+	font-weight: normal;
+	font-size: 30px;
+	padding: 14px 20px;
+	margin: 0 10px;
+}
