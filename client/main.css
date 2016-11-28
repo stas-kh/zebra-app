@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/vendor/bootstrap/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css');
 
 *, input {
 	font-family: 'Source Sans Pro', sans-serif;
@@ -7,7 +10,7 @@
 	box-sizing: border-box;
 }
 
-html, body {
+html, body, #__blaze-root, #zebra-app {
 	height: 100%;
 }
 
@@ -41,29 +44,12 @@ div.content {
 	overflow: auto;
 }
 
-nav {
-	background: #004D40;
-	color: white;
+#zebra-app .navbar {
+	padding-left: 20px;
+	border-radius: 0;
 }
-nav ul {
-	list-style: none;
-	overflow: hidden;
-	padding-left: 30px;
-}
-nav ul li {
-	float: left;
-	padding: 20px;
-	margin: 0 10px;
-	font-size: 1.3em;
-	cursor: pointer;
-	text-decoration: none;
-}
-nav ul li:hover {
-	text-decoration: underline;
-}
-nav h1 {
-	font-weight: normal;
-	font-size: 30px;
-	padding: 14px 20px;
-	margin: 0 10px;
+
+.new-zebra {
+	width: 400px;
+	margin: 30px auto;
 }

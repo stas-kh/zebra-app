@@ -1,12 +1,17 @@
 <template name="navigation">
-	<nav>
-		{{#if currentUser}}
-		<ul>
-			<li>Zebras</li>
-			<li>Add new</li>
-		</ul>
-		{{else}}
-			<h1>Welcome to Zebra App</h1>
-		{{/if}}
-	</nav>
+    <nav>
+        {{#if currentUser}}
+            <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+                <div class="" id="navbar-collapse-01">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="zebras">Zebras</a></li>
+                        <li><a href="new-zebra">New Zebra</a></li>
+                        <li><a href="">Test</a></li>
+                    </ul>
+                </div>
+            </nav>
+        {{else}}
+            <h1>Welcome to Zebra App</h1>
+        {{/if}}
+    </nav>
 </template>

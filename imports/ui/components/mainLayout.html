@@ -1,0 +1,11 @@
+<template name="MainLayout">
+    <div id="zebra-app">
+        {{> sidebar}}
+
+        <div class="content">
+            {{> navigation}}
+
+            {{>Template.dynamic template=content}}
+        </div>
+    </div>
+</template>

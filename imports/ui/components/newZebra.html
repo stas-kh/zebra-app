@@ -1,0 +1,21 @@
+<template name="newZebra">
+    <form class="new-zebra">
+        {{#if isDefaultMode}}
+            <div class="initial-info">
+                <h3>Set up an initial info for a new Zebra</h3>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" value="" placeholder="Zebra title" id="zebra-title">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control login-field" value="" placeholder="Questions count" id="login-name">
+            </div>
+            <div class="form-group">
+                <a class="btn btn-primary btn-lg btn-block" id="apply-changes">
+                    Go to the next step
+                    <span class="fui-arrow-right"></span>
+                </a>
+            </div>
+        {{/if}}
+    </form>
+</template>
