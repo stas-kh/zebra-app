@@ -11,18 +11,21 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-	'zebras.add'(title, questions) {
+	'zebras.add'(title, zebras) {
 		if (!this.userId) {
 			throw new Error('User is not logged in.')
 		}
 
 		check(title, String);
-		check(questions, [Object]);
+		check(zebras, [Object]);
 
-		Zebras.insert({
-			title,
-			questions
+		zebras.forEach(el => {
+			check(el.question, String);
+			check(el.answers, [String]);
+			check(el.correctAnswer, Number);
 		});
+
+		Zebras.insert({	title, zebras });
 	},
 	'zebras.remove'(zebraId) {
 		check(zebraId, String);

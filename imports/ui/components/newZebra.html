@@ -8,14 +8,48 @@
                 <input type="text" class="form-control" value="" placeholder="Zebra title" id="zebra-title">
             </div>
             <div class="form-group">
-                <input type="number" class="form-control login-field" value="" placeholder="Questions count" id="login-name">
+                <input type="number" class="form-control login-field" value="" placeholder="Questions count" id="questions-count">
             </div>
             <div class="form-group">
-                <a class="btn btn-primary btn-lg btn-block" id="apply-changes">
+                <a class="btn btn-primary btn-lg btn-block" id="go-to-extend-mode">
                     Go to the next step
                     <span class="fui-arrow-right"></span>
                 </a>
             </div>
+        {{else}}
+            <div class="initial-info">
+                <h3>Fill in the questions below to create a zebra</h3>
+            </div>
+            <form class="adding-zebras">
+                {{#each getNumOfQuestions}}
+                <div class="form-group">
+                    <div class="question">
+                        <input type="text" placeholder="Question" class="form-control question-input">
+                        <div class="question-mark">?</div>
+                        <label class="radio" for="q{{@index}}-radio0">
+                            <input type="radio" name="optionsRadios{{@index}}" value="" checked="true" data-index="0" id="q{{@index}}-radio0" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            <input type="text" placeholder="Some text" class="form-control option">
+                        </label>
+                        <label class="radio" for="q{{@index}}-radio1">
+                            <input type="radio" name="optionsRadios{{@index}}" value="" id="q{{@index}}-radio1" data-index="1" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            <input type="text" placeholder="Some text" class="form-control option">
+                        </label>
+                        <label class="radio" for="q{{@index}}-radio2">
+                            <input type="radio" name="optionsRadios{{@index}}" value="" id="q{{@index}}-radio2" data-index="2" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            <input type="text" placeholder="Some text" class="form-control option">
+                        </label>
+                        <label class="radio" for="q{{@index}}-radio3">
+                            <input type="radio" name="optionsRadios{{@index}}" value="" id="q{{@index}}-radio3" data-index="3" data-toggle="radio" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+                            <input type="text" placeholder="Some text" class="form-control option">
+                        </label>
+                    </div>
+                </div>
+                {{/each}}
+                <a class="btn btn-info btn-lg btn-block" id="add-new-zebra">
+                    Add new zebra
+                    <span class="fui-plus-circle"></span>
+                </a>
+            </form>
         {{/if}}
     </form>
 </template>

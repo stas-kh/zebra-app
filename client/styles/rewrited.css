@@ -1,3 +1,17 @@
 #login-buttons .login-link-and-dropdown-list {
 	margin: 20px;
 }
+
+#zebra-app .navbar {
+	margin-bottom: 0;
+}
+
+#zebra-app .checkbox .icons,
+#zebra-app .radio .icons {
+	top: 10px;
+}
+
+#zebra-app .checkbox,
+#zebra-app .radio {
+	clear: left;
+}

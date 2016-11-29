@@ -12,6 +12,7 @@
 
 html, body, #__blaze-root, #zebra-app {
 	height: 100%;
+	overflow: hidden;
 }
 
 aside {
@@ -40,7 +41,7 @@ aside img {
 
 div.content {
 	width: calc(100% - 300px);
-	min-height: 100%;
+	height: 100%;
 	overflow: auto;
 }
 
@@ -52,4 +53,30 @@ div.content {
 .new-zebra {
 	width: 400px;
 	margin: 30px auto;
+}
+
+.app {
+	height: calc(100% - 53px);
+	overflow: auto;
+}
+
+.question {
+	margin: 30px 0;
+}
+
+.question:first-child {
+	margin-top: 20px;
+}
+
+.question-input {
+	width: calc(100% - 15px);
+	float: left;
+	margin: 10px 0;
+}
+
+.question-mark {
+	float: left;
+	width: 15px;
+	text-align: center;
+	padding: 15px 0;
 }
