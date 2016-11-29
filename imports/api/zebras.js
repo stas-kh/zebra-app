@@ -5,7 +5,7 @@ import {check} from 'meteor/check';
 export const Zebras = new Mongo.Collection('zebras');
 
 if (Meteor.isServer) {
-	Meteor.publish('zebrasReady', function () {
+	Meteor.publish('zebrasReady', function zebrasReadyCallback() {
 		return Zebras.find({});
 	});
 }

@@ -1,0 +1,12 @@
+<template name="zebraList">
+    <h1>Zebra list</h1>
+    {{#each getZebras}}
+        <h3>{{this.title}}</h3>
+        {{#each zebras}}
+            <h4>{{this.question}}?</h4>
+            {{#each answers}}
+                {{this}}
+            {{/each}}
+        {{/each}}
+    {{/each}}
+</template>
