@@ -10,21 +10,37 @@
 	box-sizing: border-box;
 }
 
-html, body, #__blaze-root, #zebra-app {
+html,
+body,
+#__blaze-root,
+#zebra-app {
 	height: 100%;
 	overflow: hidden;
+}
+
+.content {
+	width: calc(100% - 300px);
+	height: 100%;
+	overflow: auto;
+}
+
+.app {
+	height: calc(100% - 53px);
+	overflow: auto;
+	padding: 20px 60px;
 }
 
 aside {
 	position: relative;
 	width: 300px;
 	height: 100%;
-	background: linear-gradient(to bottom, rgba(0,151,167,1) 0%,rgba(0,96,100,1) 100%);;
+	background: linear-gradient(to bottom, rgba(0, 151, 167, 1) 0%, rgba(0, 96, 100, 1) 100%);;
 	color: white;
 	float: left;
 	text-align: center;
 	padding: 30px;
 }
+
 aside .sidebar-info {
 	position: absolute;
 	width: 100%;
@@ -32,32 +48,18 @@ aside .sidebar-info {
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
 aside h1 {
 	font-size: 3em;
 }
+
 aside img {
 	max-width: 100%;
 }
 
-div.content {
-	width: calc(100% - 300px);
-	height: 100%;
-	overflow: auto;
-}
-
-#zebra-app .navbar {
-	padding-left: 20px;
-	border-radius: 0;
-}
-
-.new-zebra {
+.content-form {
 	width: 400px;
 	margin: 30px auto;
-}
-
-.app {
-	height: calc(100% - 53px);
-	overflow: auto;
 }
 
 .question {
@@ -79,4 +81,49 @@ div.content {
 	width: 15px;
 	text-align: center;
 	padding: 15px 0;
+}
+
+.zebra-view {
+	width: calc(50% - 10px);
+	position: relative;
+	float: left;
+	color: #34495E;
+	padding: 25px;
+	box-shadow: 0 0 15px silver;
+	text-align: center;
+	cursor: pointer;
+	margin: 20px 0;
+}
+
+.zebra-view:nth-of-type(odd) {
+	margin-right: 10px;
+}
+.zebra-view:nth-of-type(even) {
+	margin-left: 10px;
+}
+
+.zebra-view .fui-eye {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	content: "";
+	opacity: 0;
+	transition: 0.4s ease-out all;
+	background-color: transparent;
+}
+
+.zebra-view:hover .fui-eye {
+	top: 0;
+	opacity: 1;
+	background-color: rgba(44,62,80, 0.3);
+}
+
+.zebra-view .fui-eye:before {
+	content: "\e62c";
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 60px;
 }

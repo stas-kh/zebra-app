@@ -2,7 +2,6 @@ import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
 
 import './newZebra.html';
-import '../../api/zebras';
 
 const modes = {
     DEFAULT: "DEFAULT", 
@@ -11,8 +10,7 @@ const modes = {
 
 Template.newZebra.onCreated(function () {
     this.state = new ReactiveDict();
-
-    Template.instance().state.set('mode', modes.DEFAULT);
+    this.state.set('mode', modes.DEFAULT);
 });
 
 Template.newZebra.events({
@@ -27,9 +25,9 @@ Template.newZebra.events({
     'click #add-new-zebra'(event, instance) {
         let resultZebra = [];
 
-        for (var formElement of document.querySelectorAll('.question')) {
+        for (let formElement of document.querySelectorAll('.question')) {
             let answers = [];
-            for (var i = 0; i < formElement.querySelectorAll('.option').length; i++) {
+            for (let i = 0; i < formElement.querySelectorAll('.option').length; i++) {
                 answers.push(formElement.querySelectorAll('.option')[i].value);
             }
 
@@ -41,6 +39,8 @@ Template.newZebra.events({
         }
         
         Meteor.call('zebras.add', instance.state.get('zebraTitle'), resultZebra);
+
+	    FlowRouter.go('/zebras');
     }
 });
 

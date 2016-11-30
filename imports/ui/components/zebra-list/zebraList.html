@@ -1,12 +1,13 @@
 <template name="zebraList">
-    <h1>Zebra list</h1>
-    {{#each getZebras}}
-        <h3>{{this.title}}</h3>
-        {{#each zebras}}
-            <h4>{{this.question}}?</h4>
-            {{#each answers}}
-                {{this}}
-            {{/each}}
-        {{/each}}
-    {{/each}}
+	<div>
+		<h3>Zebra list</h3>
+		<div class="zebras-list">
+			{{#each getZebras}}
+				<div class="zebra-view">
+					<span class="fui-eye"></span>
+					<div class="zebra-title">{{title}}</div>
+				</div>
+			{{/each}}
+		</div>
+	</div>
 </template>

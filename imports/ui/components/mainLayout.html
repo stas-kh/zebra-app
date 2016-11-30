@@ -1,13 +1,17 @@
 <template name="MainLayout">
-    <div id="zebra-app">
-        {{> sidebar}}
+	<div id="zebra-app">
+		{{> sidebar}}
 
-        <div class="content">
-            {{> navigation}}
+		<div class="content">
+			{{> navigation}}
 
-            <div class="app">
-                {{>Template.dynamic template=content}}
-            </div>
-        </div>
-    </div>
+			<div class="app">
+				{{#if currentUser}}
+					{{>Template.dynamic template=content}}
+				{{else}}
+					{{>loginButtons}}
+				{{/if}}
+			</div>
+		</div>
+	</div>
 </template>

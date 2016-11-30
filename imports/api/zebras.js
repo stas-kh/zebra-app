@@ -25,7 +25,7 @@ Meteor.methods({
 			check(el.correctAnswer, Number);
 		});
 
-		Zebras.insert({	title, zebras });
+		Zebras.insert({title, zebras});
 	},
 	'zebras.remove'(zebraId) {
 		check(zebraId, String);

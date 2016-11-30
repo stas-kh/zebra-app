@@ -1,8 +1,10 @@
 import './ui/components/mainLayout.html';
-import './ui/components/sidebar.html';
-import './ui/components/navigation.html';
-import './ui/components/content.html';
-import './ui/components/new-zebra.js';
+
+import './ui/components/main/sidebar.html';
+import './ui/components/main/navigation.html';
+import './ui/components/main/content.html';
+
+import './ui/components/new-zebra/new-zebra.js';
 import './ui/components/zebra-list/zebra-list.js';
 
 FlowRouter.route('/', {

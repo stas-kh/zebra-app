@@ -1,8 +1,8 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+import { Zebras } from '../../../api/zebras';
 
 import './zebraList.html';
-import { Zebras } from '../../../api/zebras';
 
 Template.zebraList.onCreated(function () {
     Meteor.subscribe('zebrasReady');

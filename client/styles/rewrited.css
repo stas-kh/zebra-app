@@ -1,5 +1,10 @@
-#login-buttons .login-link-and-dropdown-list {
+#zebra-app #login-buttons .login-link-and-dropdown-list {
 	margin: 20px;
+}
+
+#zebra-app .navbar {
+	padding-left: 20px;
+	border-radius: 0;
 }
 
 #zebra-app .navbar {
