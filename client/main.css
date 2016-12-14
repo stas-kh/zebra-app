@@ -58,8 +58,7 @@ aside img {
 }
 
 .content-form {
-	width: 400px;
-	margin: 30px auto;
+	width: 600px;
 }
 
 .question {
@@ -84,22 +83,17 @@ aside img {
 }
 
 .zebra-view {
-	width: calc(50% - 10px);
+	width: 150px;
+	height: 150px;
 	position: relative;
 	float: left;
 	color: #34495E;
 	padding: 25px;
-	box-shadow: 0 0 15px silver;
 	text-align: center;
 	cursor: pointer;
-	margin: 20px 0;
-}
-
-.zebra-view:nth-of-type(odd) {
-	margin-right: 10px;
-}
-.zebra-view:nth-of-type(even) {
-	margin-left: 10px;
+	margin: 20px 20px 20px 0;
+	border: 2px solid #48c9b0;
+	border-radius: 6px;
 }
 
 .zebra-view .fui-eye {
@@ -114,6 +108,13 @@ aside img {
 	background-color: transparent;
 }
 
+.zebra-view .zebra-title {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .zebra-view:hover .fui-eye {
 	top: 0;
 	opacity: 1;
@@ -126,4 +127,10 @@ aside img {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 60px;
+}
+
+.question-info {
+	font-size: 16px;
+	padding: 7px 0;
+	display: block;
 }

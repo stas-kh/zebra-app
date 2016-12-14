@@ -8,6 +8,12 @@ Template.zebraList.onCreated(function () {
     Meteor.subscribe('zebrasReady');
 });
 
+Template.zebraList.events({
+   'click .zebra-view'() {
+	   FlowRouter.go(`/zebras/${this._id}`);
+   }
+});
+
 Template.zebraList.helpers({
     getZebras() {
         return Zebras.find({});

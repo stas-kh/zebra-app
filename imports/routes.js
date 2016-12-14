@@ -6,6 +6,7 @@ import './ui/components/main/content.html';
 
 import './ui/components/new-zebra/new-zebra.js';
 import './ui/components/zebra-list/zebra-list.js';
+import './ui/components/zebra-list/zebra-view/zebra-view.js';
 
 FlowRouter.route('/', {
     action() {
@@ -29,4 +30,12 @@ FlowRouter.route('/zebras', {
             content: 'zebraList'
         });
     }
+});
+
+FlowRouter.route('/zebras/:zebraId', {
+	action() {
+		BlazeLayout.render('MainLayout', {
+			content: 'zebraView'
+		});
+	}
 });

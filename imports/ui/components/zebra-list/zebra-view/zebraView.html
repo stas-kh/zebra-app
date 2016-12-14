@@ -1,0 +1,14 @@
+<template name="zebraView">
+	<h1>{{getTitle}}</h1>
+	{{#each getQuestions}}
+		<div class="question">
+			<h6 class="zebra-view-question">{{question}}?</h6>
+			{{#each answers}}
+				<label class="radio">
+					<input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio" checked="" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
+					<span class="question-info">{{this}}</span>
+				</label>
+			{{/each}}
+		</div>
+	{{/each}}
+</template>
