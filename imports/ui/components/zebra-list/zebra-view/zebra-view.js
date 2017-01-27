@@ -9,10 +9,31 @@ Template.zebraView.onCreated(function () {
 
 	this.state = new ReactiveDict();
 	this.state.set('zebra', {});
+	this.state.set('userAnswers', []);
 });
 
 Template.zebraView.events({
+	'click #get-the-result'(event, instance) {
+		let userAnswers = [],
+			correctAnswers = instance.state.get('zebra').zebras.map((zebra) => zebra.correctAnswer),
+			correctAnswersCount = 0;
 
+		for (let formElement of document.querySelectorAll('.question')) {
+			userAnswers.push(parseInt(formElement.querySelector('.custom-radio:checked').value));
+		}
+
+		userAnswers.forEach((value, index) => {
+			if (correctAnswers[index] === value) {
+				correctAnswersCount++;
+			}
+		});
+
+		FlowRouter.go('/result', null, {
+			zebraName: instance.state.get('zebra').title,
+			correctAnswersCount,
+			questionsCount: correctAnswers.length
+		});
+	}
 });
 
 Template.zebraView.helpers({
@@ -32,5 +53,8 @@ Template.zebraView.helpers({
 		if (zebra) {
 			return zebra.zebras;
 		}
+	},
+	isChecked(index) {
+		return index === 0;
 	}
 });

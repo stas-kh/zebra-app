@@ -1,0 +1,8 @@
+<template name="resultWindow">
+	<h3>Quiz results</h3>
+	<p>You've just passed <strong>{{getName}}</strong> quiz and got {{getCorrectAnswersCount}} of {{getQuestionsCount}} correct answer(s).</p>
+	{{#if isAllAnswersDone}}
+		<p>You have completed the Quiz. Create your own <a href="/new-zebra">here</a>.</p>
+	{{/if}}
+	<progress max="{{getQuestionsCount}}" value="{{getCorrectAnswersCount}}"></progress>
+</template>

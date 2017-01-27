@@ -1,14 +1,30 @@
 <template name="zebraView">
 	<h1>{{getTitle}}</h1>
 	{{#each getQuestions}}
-		<div class="question">
-			<h6 class="zebra-view-question">{{question}}?</h6>
-			{{#each answers}}
-				<label class="radio">
-					<input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" data-toggle="radio" checked="" class="custom-radio"><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
-					<span class="question-info">{{this}}</span>
-				</label>
-			{{/each}}
-		</div>
+		{{#let questionIndex=@index}}
+			<div class="question">
+				<h6 class="zebra-view-question">{{question}}?</h6>
+				{{#each answers}}
+					<label class="radio">
+						{{#if isChecked @index}}
+							<input type="radio" class="custom-radio" name="optionsRadios-{{questionIndex}}" value="{{@index}}" data-toggle="radio" checked="checked"/>
+						{{else}}
+							<input type="radio" class="custom-radio" name="optionsRadios-{{questionIndex}}" value="{{@index}}" data-toggle="radio"/>
+						{{/if}}
+						<span class="icons">
+							<span class="icon-unchecked"></span>
+							<span class="icon-checked"></span>
+						</span>
+						<span class="question-info">{{this}}</span>
+					</label>
+				{{/each}}
+			</div>
+		{{/let}}
 	{{/each}}
+	<div class="result-area">
+		<a class="btn btn-primary btn-lg btn-block" id="get-the-result">
+			Get the result!
+			<span class="fui-arrow-right"></span>
+		</a>
+	</div>
 </template>
